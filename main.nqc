@@ -1,5 +1,5 @@
-#define turn_right(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A);OnRev(OUT_C);
-#define turn_left(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_C);OnRev(OUT_A);
+#define turn_right(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_C);OnRev(OUT_A);
+#define turn_left(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A);OnRev(OUT_C);
 #define forwards(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A+OUT_C);
 #define backwards(s)  SetPower(OUT_A+OUT_C,s);OnRev(OUT_A+OUT_C);
 #define stop_engines() Off(OUT_A+OUT_C);
@@ -34,10 +34,10 @@ task main() {
 	backwards(SPEED); 
     }
     if (Message() == LEFT) {
-	turn_left(SPEED); 
+	turn_left(HIGH_POWER); 
     }
     if (Message() == RIGHT) {
-	turn_right(SPEED); 
+	turn_right(HIGH_POWER); 
     }
   }
 }
