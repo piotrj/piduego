@@ -10,8 +10,6 @@
 #define HIGH_POWER 6
 #define MAXIMUM_POWER 7
 
-#define SPEED MINIMUM_POWER
-
 #define NO_MSG 0
 #define STOP 1
 #define FORWARD 2
@@ -19,57 +17,42 @@
 #define LEFT 4
 #define RIGHT 5
 
+int message;
+int command;
+int power;
+
 task main() {
   while(true) {
     ClearMessage();
-
-    until (Message() != NO_MSG);
-    if (Message() == STOP) {
-	stop_engines(); 
-    }
-    if (Message() == FORWARD) {
-	forwards(SPEED); 
-    }
-    if (Message() == BACK) {
-	backwards(SPEED); 
-    }
-    if (Message() == LEFT) {
-	turn_left(LOW_POWER); 
-    }
-    if (Message() == RIGHT) {
-	turn_right(LOW_POWER); 
-    }
-    if (Message() >= 10 && Message() <20) {
-        stop_engines();    
+    
+    message = Message()
+    if (message > 10) {
+      command = (message - message%10)/10;
+      power = message%10;
+        if (power >7) {
+          power = 7;
+        {
+    } else {
+      command = message;
+      power = LOW_POWER;
     }
 
-    if (Message() >= 20 && Message() <30) {
-	power = Message()%10;
-	if (power > 7) {
-	power=7;
-	}
-        forwards(power);    
+    until (command != NO_MSG);
+    if (command == STOP) {
+	    stop_engines(); 
     }
-    if (Message() >= 30 && Message() <40) {
-	power = Message()%10;
-	if (power > 7) {
-	power=7;
-	}
-        backwards(power);    
+    if (command == FORWARD) {
+	    forwards(power); 
     }
-    if (Message() >= 40 && Message() <50) {
-	power = Message()%10;
-	if (power > 7) {
-	power=7;
-	}
-        turn_left(power);    
+    if (command == BACK) {
+	    backwards(power); 
     }
-    if (Message() >= 50 && Message() <60) {
-	power = Message()%10;
-	if (power > 7) {
-	power=7;
-	}
-        turn_right(power);    
+    if (command == LEFT) {
+	    turn_left(power); 
     }
+    if (command == RIGHT) {
+    	turn_right(power); 
+    }
+
   }
 }
