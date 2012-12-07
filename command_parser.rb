@@ -11,15 +11,16 @@ class Command
     left: 4,
     right: 5
   }
+  attr_reader :type, :power
 
-  def initializer(type, power)
+  def initialize(type, power)
     @type = type
     @power = power.to_i || 0
   end
 
   def emit
     puts "command: #{type}, power: #{power}, code: #{code}"
-    `./emit.sh #{code}`
+    # `./emit.sh #{code}`
   end
 
   def code
