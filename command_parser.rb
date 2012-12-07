@@ -20,7 +20,7 @@ class Command
 
   def emit
     puts "command: #{type}, power: #{power}, code: #{code}"
-    # `./emit.sh #{code}`
+    `./emit.sh #{code}`
   end
 
   def code
