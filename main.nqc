@@ -34,10 +34,10 @@ task main() {
 	backwards(SPEED); 
     }
     if (Message() == LEFT) {
-	turn_left(HIGH_POWER); 
+	turn_left(LOW_POWER); 
     }
     if (Message() == RIGHT) {
-	turn_right(HIGH_POWER); 
+	turn_right(LOW_POWER); 
     }
   }
 }
