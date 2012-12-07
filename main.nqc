@@ -3,8 +3,6 @@
 #define forwards(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A+OUT_C);Wait(t);
 #define backwards(s,t)  SetPower(OUT_A+OUT_C,s);OnRev(OUT_A+OUT_C);Wait(t);
 
-int sound;
-
 task main() {
   while(true) {
     ClearMessage();
