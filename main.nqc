@@ -12,6 +12,13 @@
 
 #define SPEED MID_POWER
 
+#define NO_MSG 0
+#define STOP 1
+#define FORWARD 2
+#define BACK 3
+#define LEFT 4
+#define RIGHT 5
+
 task main() {
   while(true) {
     ClearMessage();
