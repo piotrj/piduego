@@ -10,7 +10,7 @@
 #define HIGH_POWER 6
 #define MAXIMUM_POWER 7
 
-#define SPEED MID_POWER
+#define SPEED MINIMUM_POWER
 
 #define NO_MSG 0
 #define STOP 1
