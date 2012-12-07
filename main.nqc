@@ -28,7 +28,7 @@ task main() {
 	stop_engines(); 
     }
     if (Message() == FORWARD) {
-	forward(SPEED); 
+	forwards(SPEED); 
     }
     if (Message() == BACK) {
 	backwards(SPEED); 
