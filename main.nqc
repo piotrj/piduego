@@ -2,6 +2,7 @@
 #define turn_left(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_C);OnRev(OUT_A);
 #define forwards(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A+OUT_C);
 #define backwards(s)  SetPower(OUT_A+OUT_C,s);OnRev(OUT_A+OUT_C);
+#define stop_engines() Off(OUT_A+OUT_C);
 
 #define MINIMUM_POWER 0
 #define LOW_POWER 2
