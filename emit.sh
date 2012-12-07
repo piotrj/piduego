@@ -1,2 +1,2 @@
 #!/bin/sh
-nqc -Susb:/dev/usb/legotower0 -m $1
+nqc -Susb:/dev/usb/legotower0 -msg $1
