@@ -25,19 +25,19 @@ task main() {
 
     until (Message() != NO_MSG);
     if (Message() == STOP) {
-	stop_engines() 
+	stop_engines(); 
     }
     if (Message() == FORWARD) {
-	forward(SPEED) 
+	forward(SPEED); 
     }
     if (Message() == BACK) {
-	backwards(SPEED) 
+	backwards(SPEED); 
     }
     if (Message() == LEFT) {
-	turn_left(SPEED) 
+	turn_left(SPEED); 
     }
     if (Message() == RIGHT) {
-	turn_right(SPEED) 
+	turn_right(SPEED); 
     }
   }
 }
