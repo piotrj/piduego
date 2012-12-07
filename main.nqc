@@ -1,0 +1,18 @@
+int sound;
+
+task main() {
+  while(true) {
+    ClearMessage();
+    until (Message() != 0);
+    PlaySound(4);
+    if (Message() == 1) {
+      OnFwd(OUT_A);
+      OnFwd(OUT_B);
+      Wait(400);
+      OnRev(OUT_A+OUT_B);
+      Wait(400);
+      Off(OUT_A+OUT_B);
+    }
+  }
+}
+
