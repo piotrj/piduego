@@ -1,3 +1,8 @@
+#define turn_right(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A);OnRev(OUT_C);Wait(t);
+#define turn_left(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_C);OnRev(OUT_A);Wait(t);
+#define forwards(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A+OUT_C);Wait(t);
+#define backwards(s,t)  SetPower(OUT_A+OUT_C,s);OnRev(OUT_A+OUT_C);Wait(t);
+
 int sound;
 
 task main() {
