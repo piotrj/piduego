@@ -30,5 +30,14 @@ task main() {
     if (Message() == FORWARD) {
 	forward(SPEED) 
     }
+    if (Message() == BACK) {
+	backwards(SPEED) 
+    }
+    if (Message() == LEFT) {
+	turn_left(SPEED) 
+    }
+    if (Message() == RIGHT) {
+	turn_right(SPEED) 
+    }
   }
 }
