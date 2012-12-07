@@ -1,8 +1,7 @@
-#define turn_right(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A);OnRev(OUT_C);Wait(t);
-#define turn_left(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_C);OnRev(OUT_A);Wait(t);
-#define forwards(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A+OUT_C);Wait(t);
-#define backwards(s,t)  SetPower(OUT_A+OUT_C,s);OnRev(OUT_A+OUT_C);Wait(t);
-#define SECOND 1000
+#define turn_right(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A);OnRev(OUT_C);
+#define turn_left(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_C);OnRev(OUT_A);
+#define forwards(s)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A+OUT_C);
+#define backwards(s)  SetPower(OUT_A+OUT_C,s);OnRev(OUT_A+OUT_C);
 #define MINIMUM_POWER 0
 #define LOW_POWER 2
 #define MID_POWER 4
@@ -14,7 +13,7 @@ task main() {
     ClearMessage();
     until (Message() != 0);
     if (Message() == 2) {
-	forward(MID_POWER,1 * SECOND) 
+	forward(MID_POWER) 
     }
   }
 }
