@@ -2,6 +2,12 @@
 #define turn_left(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_C);OnRev(OUT_A);Wait(t);
 #define forwards(s,t)  SetPower(OUT_A+OUT_C,s);OnFwd(OUT_A+OUT_C);Wait(t);
 #define backwards(s,t)  SetPower(OUT_A+OUT_C,s);OnRev(OUT_A+OUT_C);Wait(t);
+#define SECOND 1000
+#define MINIMUM_POWER 0
+#define LOW_POWER 2
+#define MID_POWER 4
+#define HIGH_POWER 6
+#define MAXIMUM_POWER 7
 
 task main() {
   while(true) {
